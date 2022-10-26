@@ -5,5 +5,5 @@ services:
     image: akvo/akvo-node-17-alpine:20220121.024749.f30b815
     command: ["./start.sh"]
     volumes:
-      - ./frontend/wwwroot:/app:delegated
+      - ./frontend:/app:delegated
     working_dir: /app

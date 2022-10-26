@@ -29,17 +29,10 @@ fi
 
 if [[ "${CI_BRANCH}" ==  "main" || "${CI_BRANCH}" ==  "develop" && "${CI_PULL_REQUEST}" !=  "true" ]];
 then
-    BACKEND_CHANGES=1
     FRONTEND_CHANGES=1
 fi
 
-if [ ! -d "${SERVICE_ACCOUNT}" ]
-then
-    echo "Service account not exists"
-    exit 1
-fi
-
-image_prefix="eu.gcr.io/akvo-lumen/rtmis"
+image_prefix="eu.gcr.io/akvo-lumen/terria-maps"
 
 dc () {
     docker-compose \
@@ -54,9 +47,6 @@ dci () {
 frontend_build () {
 
     echo "PUBLIC_URL=/" > frontend/.env
-
-    # Code Quality and Build Folder
-    sed 's/"warn"/"error"/g' < frontend/.eslintrc.json > frontend/.eslintrc.prod.json
 
     dc -f docker-compose.yml run \
        --rm \
@@ -74,6 +64,11 @@ if [[ ${FRONTEND_CHANGES} == 1 ]];
 then
     echo "================== * FRONTEND BUILD * =================="
     frontend_build
+    if ! dci run -T ci ./basic.sh; then
+        dci logs
+        echo "Build failed when running basic.sh"
+        exit 1
+    fi
 else
     echo "No Changes detected for frontend -- SKIP BUILD"
 fi
