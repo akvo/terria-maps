@@ -1,0 +1,26 @@
+---
+version: "3.9"
+services:
+  ci:
+    image: alpine:3.14
+    depends_on:
+      - backend
+      - db
+      - frontend
+    entrypoint: ./entrypoint.sh
+    network_mode: service:mainnetwork
+    volumes:
+      - ./ci/test:/test:ro
+    working_dir: /test
+  frontend:
+    image: eu.gcr.io/akvo-lumen/rtmis/frontend:latest
+    command: ["nginx", "-g", "daemon off;"]
+    network_mode: service:mainnetwork
+    volumes:
+      - ./frontend/wwwroot:/app:delegated
+    working_dir: /app
+  mainnetwork:
+    image: alpine:3.14
+    command: ["tail", "-f", "/dev/null"]
+    ports:
+      - 8000:8000
