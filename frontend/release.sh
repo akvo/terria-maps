@@ -3,5 +3,6 @@
 
 set -euo pipefail
 
+apt-get install python3
 yarn install --no-progress --frozen-lock
 yarn gulp release
