@@ -3,6 +3,5 @@
 
 set -euo pipefail
 
-apk add --no-cache python3 py3-pip
 yarn install --no-progress --frozen-lock
 yarn gulp release
