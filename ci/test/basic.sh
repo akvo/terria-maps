@@ -3,6 +3,8 @@
 
 set -euo pipefail
 
+wait4ports -q -s 1 -t 60 tcp://localhost:80
+
 http_get() {
     url="${1}"
     shift
