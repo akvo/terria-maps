@@ -34,6 +34,11 @@ frontend_build () {
 
     dc -f docker-compose.yml up
 
+    chown -R $USER:$USER frontend
+    chmod -R 755 frontend
+
+    ls -alh
+
     docker build \
            --tag "${image_prefix}/frontend:latest" \
            --tag "${image_prefix}/frontend:${CI_COMMIT}" frontend
