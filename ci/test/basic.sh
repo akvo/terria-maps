@@ -11,4 +11,5 @@ http_get() {
     curl --verbose --url "${url}" "$@" 2>&1 | grep "< HTTP.*${code}"
 }
 
+curl "http://localhost"
 http_get "http://localhost" 200

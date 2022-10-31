@@ -32,8 +32,6 @@ dci () {
 
 frontend_build () {
 
-    echo "PUBLIC_URL=/" > frontend/.env
-
     dc -f docker-compose.yml up
 
     docker build \
