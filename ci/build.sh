@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 set -exuo pipefail
 
@@ -19,6 +19,12 @@ while IFS= read -r IMAGE_CACHE; do
 done <<< "${IMAGE_CACHE_LIST}"
 
 image_prefix="eu.gcr.io/akvo-lumen/terria-maps"
+
+dc () {
+    docker-compose \
+        --ansi never \
+        "$@"
+}
 
 dci () {
     dc -f docker-compose.ci.yml "$@"
