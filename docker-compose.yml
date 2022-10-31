@@ -3,7 +3,7 @@ version: "3.9"
 services:
   frontend:
     image: node:14
-    command: ["./start.sh"]
+    command: ["./release.sh"]
     volumes:
       - ./frontend:/app:delegated
     working_dir: /app
