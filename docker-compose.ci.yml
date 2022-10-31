@@ -2,7 +2,7 @@
 version: "3.9"
 services:
   frontend:
-    image: eu.gcr.io/akvo-lumen/rtmis/frontend:latest
+    image: eu.gcr.io/akvo-lumen/terria-maps/frontend:latest
     command: ["nginx", "-g", "daemon off;"]
     network_mode: service:mainnetwork
     volumes:

@@ -34,7 +34,6 @@ frontend_build () {
 
     dc -f docker-compose.yml up
 
-    chown -R $USER:$USER frontend
     chmod -R 755 frontend
 
     ls -alh
