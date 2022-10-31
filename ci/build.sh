@@ -20,21 +20,11 @@ done <<< "${IMAGE_CACHE_LIST}"
 
 image_prefix="eu.gcr.io/akvo-lumen/terria-maps"
 
-dc () {
-    docker-compose \
-        --ansi never \
-        "$@"
-}
-
 dci () {
     dc -f docker-compose.ci.yml "$@"
 }
 
 frontend_build () {
-
-    dc -f docker-compose.yml up
-
-    ls -alh
 
     docker build \
            --tag "${image_prefix}/frontend:latest" \
