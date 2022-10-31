@@ -34,8 +34,6 @@ frontend_build () {
 
     dc -f docker-compose.yml up
 
-    chmod -R 755 frontend
-
     ls -alh
 
     docker build \
