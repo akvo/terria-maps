@@ -2,8 +2,10 @@
 version: "3.9"
 services:
   frontend:
-    image: node:14
-    command: ["./release.sh"]
+    image: eu.gcr.io/akvo-lumen/terria-maps/frontend:latest
+    command: ["./start.sh"]
     volumes:
       - ./frontend:/app:delegated
     working_dir: /app
+    ports:
+      - 80:3001
