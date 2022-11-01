@@ -3,7 +3,7 @@ version: "3.9"
 services:
   frontend:
     image: eu.gcr.io/akvo-lumen/terria-maps/frontend:latest
-    command: ["start.sh"]
+    command: ["./start.sh"]
     network_mode: service:mainnetwork
     volumes:
       - ./frontend:/app:delegated

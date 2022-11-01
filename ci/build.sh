@@ -32,7 +32,7 @@ dci () {
 
 frontend_build () {
 
-    docker build \
+    docker build --rm=false \
            --tag "${image_prefix}/frontend:latest" \
            --tag "${image_prefix}/frontend:${CI_COMMIT}" frontend
 
