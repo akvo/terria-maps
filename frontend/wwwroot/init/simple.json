@@ -194,7 +194,9 @@
           "activeStyle": "Current % of Max Cap",
           "defaultColumn": {
             "replaceWithZeroValues": [],
-            "replaceWithNullValues": ["-"]
+            "replaceWithNullValues": [
+              "-"
+            ]
           },
           "defaultStyle": {
             "time": {
@@ -282,7 +284,10 @@
               "activeStyle": "Socio-economic_Disadvantage",
               "defaultStyle": {
                 "color": {
-                  "binColors": ["rgba(0,0,0,1.00)", "rgba(0,200,0,1.0)"],
+                  "binColors": [
+                    "rgba(0,0,0,1.00)",
+                    "rgba(0,200,0,1.0)"
+                  ],
                   "numberOfBins": 2
                 }
               },
@@ -352,7 +357,10 @@
               "activeStyle": "Mask",
               "defaultStyle": {
                 "color": {
-                  "binColors": ["rgba(0,0,0,0.0)", "rgba(0,0,0,1.0)"],
+                  "binColors": [
+                    "rgba(0,0,0,0.0)",
+                    "rgba(0,0,0,1.0)"
+                  ],
                   "numberOfBins": 2
                 }
               },
@@ -479,12 +487,21 @@
             },
             {
               "position": {
-                "cartographicDegrees": [133.0, -25.0, 0.0]
+                "cartographicDegrees": [
+                  133,
+                  -25,
+                  0
+                ]
               },
               "point": {
                 "pixelSize": 5,
                 "color": {
-                  "rgba": [255, 0, 0, 255]
+                  "rgba": [
+                    255,
+                    0,
+                    0,
+                    255
+                  ]
                 }
               }
             }
@@ -499,12 +516,18 @@
         {
           "name": "Test Villa Gardenia",
           "type": "geojson",
-          "url": "build/TerriaJS/test/GeoJSON/villa_gardenia.geojson"
+          "url": "experimental/GeoJSON/villa_gardenia.geojson",
+          "info": [
+            {
+              "name": "Description",
+              "content": "<a href=\"https://www.villagardeniajogja.id/\">About Villa Gardenia</a>"
+            }
+          ]
         },
         {
           "name": "Bihar",
           "type": "geojson",
-          "url": "build/TerriaJS/test/GeoJSON/bihar.geojson"
+          "url": "experimental/GeoJSON/bihar.geojson"
         },
         {
           "name": "Test styled and unstyled features",
@@ -540,7 +563,10 @@
                 },
                 "geometry": {
                   "type": "Point",
-                  "coordinates": [146.469, -40.83]
+                  "coordinates": [
+                    146.469,
+                    -40.83
+                  ]
                 }
               }
             ]
@@ -553,7 +579,12 @@
       "type": "esri-mapServer",
       "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
       "name": "Surface Geology",
-      "rectangle": { "west": 106, "south": -52, "east": 172, "north": -8 },
+      "rectangle": {
+        "west": 106,
+        "south": -52,
+        "east": 172,
+        "north": -8
+      },
       "info": [
         {
           "name": "Licence",
@@ -613,7 +644,7 @@
       "model": {
         "url": "lowpoly_bus/scene.gltf",
         "scale": 0.3048,
-        "maximumDistance": 500.0
+        "maximumDistance": 500
       }
     },
     {

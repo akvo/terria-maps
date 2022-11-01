@@ -10,13 +10,13 @@
       "text": "Disclaimer: This map must not be used for navigation or precise spatial analysis",
       "url": ""
     },
-    "appName": "Terria Map",
+    "appName": "Akvo Maps",
     "brandBarElements": [
       "",
       "<a target=\"_blank\" href=\"https://terria.io\"><img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
       ""
     ],
-    "supportEmail": "help@example.com",
+    "supportEmail": "tech.consultancy@akvo.org",
     "proj4ServiceBaseUrl": "proj4def/",
     "feedbackUrl": "feedback",
     "mobileDefaultViewerMode": "2d",
