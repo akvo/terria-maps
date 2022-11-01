@@ -1,6 +1,11 @@
 ---
 version: "3.9"
 services:
+  mainnetwork:
+    image: alpine:3.14
+    command: ["tail", "-f", "/dev/null"]
+    ports:
+      - 80:3001
   frontend:
     image: eu.gcr.io/akvo-lumen/terria-maps/frontend:latest
     command: ["./start.sh"]
@@ -10,15 +15,8 @@ services:
     working_dir: /app
   ci:
     image: alpine:3.14
-    depends_on:
-      - frontend
     entrypoint: ./entrypoint.sh
     network_mode: service:mainnetwork
     volumes:
       - ./ci/test:/test:ro
     working_dir: /test
-  mainnetwork:
-    image: alpine:3.14
-    command: ["tail", "-f", "/dev/null"]
-    ports:
-      - 80:3001
