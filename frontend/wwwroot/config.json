@@ -13,7 +13,7 @@
     "appName": "Akvo Maps",
     "brandBarElements": [
       "",
-      "<a target=\"_blank\" href=\"https://terria.io\"><img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
+      "<a target=\"_blank\" href=\"https://akvo.org\"><img src=\"images/akvo-logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
       ""
     ],
     "supportEmail": "tech.consultancy@akvo.org",
