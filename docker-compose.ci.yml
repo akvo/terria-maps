@@ -21,4 +21,4 @@ services:
     image: alpine:3.14
     command: ["tail", "-f", "/dev/null"]
     ports:
-      - 3001:80
+      - 80:3001
